@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using AlchemyTowerDefense.GameData;
@@ -13,7 +14,16 @@ namespace AlchemyTowerDefense
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         GameStateManager gsm;
-        //Map Map = new Map();
+
+        //all of the keys required for all states of the game
+        List<Keys> keys = new List<Keys>()
+        {
+            Keys.Up,
+            Keys.Down,
+            Keys.Escape,
+            Keys.T,
+            Keys.Enter
+        };
 
         public AlchemyGame()
         {
@@ -36,8 +46,7 @@ namespace AlchemyTowerDefense
             graphics.PreferredBackBufferWidth = gsm.currentState.ScreenWidth;
             graphics.ApplyChanges();
             gsm.Initialize();
-            //Initialize the static Texture manager class
-            Textures.Initialize(Content);
+            GlobalConfig.InitializeConfig(Content,graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight, keys);
             base.Initialize();
         }
 
@@ -77,6 +86,7 @@ namespace AlchemyTowerDefense
 
             // TODO: Add your update logic here
             gsm.Update();
+            GlobalConfig.Input.Update();
 
             base.Update(gameTime);
         }

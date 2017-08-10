@@ -16,7 +16,7 @@ namespace AlchemyTowerDefense.Editor
     public class Toolbox
     {
         private Texture2D background = Textures.Toolbox["background"];
-        public List<Button> TileButtons = new List<Button>();
+        public List<Button> tileButtons = new List<Button>();
         private Rectangle rect;
         public bool active = false;
 
@@ -48,7 +48,7 @@ namespace AlchemyTowerDefense.Editor
             //place each of these textures as a button onto the tool pallete with a predefined amount of padding on each side
             foreach(Texture2D t in tileList)
             {
-                TileButtons.Add(new Button(t, new Rectangle((rect.Left + padding + k * 84), (rect.Top + padding + i * 84), 64, 64)));
+                tileButtons.Add(new Button(t, new Rectangle((rect.Left + padding + k * 84), (rect.Top + padding + i * 84), 64, 64)));
                 i++;
                 if(i % (tileList.Count / 2) == 0)
                 {
@@ -64,11 +64,11 @@ namespace AlchemyTowerDefense.Editor
             {
                 //TODO - might be able to remove the line below that is commented depending on what is happening in the editor state's update function
                 //HandleInput(ip);
-                foreach (Button b in TileButtons)
+                foreach (Button b in tileButtons)
                 {
                     if (b.Rect.Contains(Mouse.GetState().X, Mouse.GetState().Y))
                     {
-                        b.IsHighlighted(mouseTextures.dict["highlight"]);
+                        b.Highlight();
                     }
                     else
                     {
@@ -84,9 +84,9 @@ namespace AlchemyTowerDefense.Editor
             //scroll down
             if (ip.currentScrollWheel < ip.previousScrollWheel)
             {
-                if (!(TileButtons[TileButtons.Count - 1].Rect.Bottom < (960 - 20) ))
+                if (!(tileButtons[tileButtons.Count - 1].Rect.Bottom < (960 - 20) ))
                 {
-                    foreach (Button b in TileButtons)
+                    foreach (Button b in tileButtons)
                     {
                         b.ChangeRect(new Rectangle(b.Rect.X, b.Rect.Y - scrollAmount, b.Rect.Width, b.Rect.Height));
                     }
@@ -95,9 +95,9 @@ namespace AlchemyTowerDefense.Editor
             //scroll up
             else if(ip.currentScrollWheel > ip.previousScrollWheel)
             {
-                if(!(TileButtons[0].Rect.Top > 20))
+                if(!(tileButtons[0].Rect.Top > 20))
                 {
-                    foreach (Button b in TileButtons)
+                    foreach (Button b in tileButtons)
                     {
                         b.ChangeRect(new Rectangle(b.Rect.X, b.Rect.Y + scrollAmount, b.Rect.Width, b.Rect.Height));
                     }
@@ -109,7 +109,7 @@ namespace AlchemyTowerDefense.Editor
         public Texture2D Click()
         {
             Button hButton = null;
-            foreach (Button b in TileButtons)
+            foreach (Button b in tileButtons)
             {
                 if (b.IsHighlighted == true) hButton = b;
             }
@@ -128,7 +128,7 @@ namespace AlchemyTowerDefense.Editor
             if (active)
             {
                 spriteBatch.Draw(background, rect, Color.White);
-                foreach(Button b in TileButtons)
+                foreach(Button b in tileButtons)
                 {
                     b.Draw(spriteBatch);
                 }

@@ -9,15 +9,15 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AlchemyTowerDefense
 {
-    public static class Textures
+    public class Textures
     {
-        public static Dictionary<string, Texture2D> Tiles { get; private set; } = new Dictionary<string, Texture2D>();
-        public static Dictionary<string, Texture2D> Buttons { get; private set; } = new Dictionary<string, Texture2D>();
-        public static Dictionary<string, Texture2D> Decos { get; private set; } = new Dictionary<string, Texture2D>();
-        public static Dictionary<string, Texture2D> Icons { get; private set; } = new Dictionary<string, Texture2D>();
-        public static Dictionary<string, Texture2D> Toolbox { get; private set; } = new Dictionary<string, Texture2D>();
+        public Dictionary<string, Texture2D> Tiles { get; private set; } = new Dictionary<string, Texture2D>();
+        public Dictionary<string, Texture2D> Buttons { get; private set; } = new Dictionary<string, Texture2D>();
+        public Dictionary<string, Texture2D> Decos { get; private set; } = new Dictionary<string, Texture2D>();
+        public Dictionary<string, Texture2D> Icons { get; private set; } = new Dictionary<string, Texture2D>();
+        public Dictionary<string, Texture2D> Toolbox { get; private set; } = new Dictionary<string, Texture2D>();
 
-        public static void Initialize(ContentManager c)
+        public void Initialize(ContentManager c)
         {
             Tiles = LoadTextureContent("tiles", c);
             Buttons = LoadTextureContent("buttons", c);
@@ -26,7 +26,7 @@ namespace AlchemyTowerDefense
             Toolbox = LoadTextureContent("toolbox", c);
         }
 
-        private static Dictionary<string, Texture2D> LoadTextureContent(string contentFolder, ContentManager c)
+        private Dictionary<string, Texture2D> LoadTextureContent(string contentFolder, ContentManager c)
         {
             Dictionary<string, Texture2D> td = new Dictionary<string, Texture2D>();
 
