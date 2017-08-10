@@ -23,7 +23,7 @@ namespace AlchemyTowerDefense.Util.Buttons
         /// Constructs the button.
         /// </summary>
         /// <param name="texture">This is the Texture that the button will show.</param>
-        /// <param name="rect">This is the binding rectangle for the button.</param>
+        /// <param name="rect">This is the binding rectangle for the button</param>
         public Button(Texture2D texture, Rectangle rect)
         {
             this.Texture = texture;
