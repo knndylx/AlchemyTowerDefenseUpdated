@@ -124,7 +124,7 @@ namespace AlchemyTowerDefense
             //if the toolbox is active and the user clicked
             else if (mInputProcessor.currentMouseState[Util.MouseButtons.Left] == ButtonState.Pressed && toolbox.active == true)
             {
-                Texture2D textureClick = toolbox.Click();
+                Texture2D textureClick = toolbox.ClickTileButton();
                 if (textureClick != null)
                 {
                     brushTexture = textureClick;
