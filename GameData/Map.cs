@@ -15,173 +15,175 @@ namespace AlchemyTowerDefense.GameData
 {
     public class Map
     {
-        TextureDict textureDict;
-        TextureDict decoTextureDict;
 
-        //creates a new array of tiles based on row and height
-        //List<Tile> terrainTiles = new List<Tile>();
+        //Content of the map
+        //TODO - Fragile solution, binds the Size of the screen to a set number so no change of resolution is possible yet
+        public Tile[,] TerrainTiles { get; private set; } = new Tile[15, 20];
+        public List<Decoration> Decorations { get; private set; } = new List<Decoration>();
 
-        //y, x OR row, column
-        public Tile[,] terrainTiles = new Tile[15, 20];
-        public List<Decoration> Decorations { get; private set; }
+        //Size of the tiles on the map
+        private int Size;
 
-
-        //size of the terrain tiles that will be used
-        int size = 64;
-
-        public void LoadContent(ContentManager c, string fileName = null)
+        /// <summary>
+        /// Constructor for the map. Creates a blank map unless a file name is specified
+        /// </summary>
+        /// <param name="size">Size of the tiles in the map</param>
+        /// <param name="fileName">Name of the map file to load from. Default is null.</param>
+        public Map(int size, string fileName = null)
         {
-            textureDict = new TextureDict(c, "tiles");
-            decoTextureDict = new TextureDict(c, "decos");
-            Decorations = new List<Decoration>();
+            Size = size;
             if (fileName == null)
             {
-                terrainTiles = CreateBlankMap();
+                TerrainTiles = MakeBlankTileGrid();
             }
             else
             {
                 LoadFromFile("Map.txt");
             }
-            
         }
 
-        public Tile[,] CreateBlankMap()
-        {
-            Tile[,] terrainTiles = new Tile[15,20];
-            string tileType = "blank";
 
-            int x = 0;
-            int y = 0;
-            for (x = 0; x < 20; x++)
+        /// <summary>
+        /// Makes a blank tile grid
+        /// </summary>
+        /// <returns>Returns a blank 20x15 tile grid</returns>
+        public Tile[,] MakeBlankTileGrid()
+        {
+            Tile[,] terrainTiles = new Tile[15, 20];
+
+            for (int x = 0; x < 20; x++)
             {
-                for (y = 0; y < 15; y++)
+                for (int y = 0; y < 15; y++)
                 {
-                    terrainTiles[y,x] = new Tile(new Rectangle(x * size, y * size, size, size), textureDict.dict[tileType]);
+                    terrainTiles[y, x] = new Tile(new Rectangle(x * Size, y * Size, Size, Size), Textures.Tiles["blank"]);
 
                 }
             }
+
             return terrainTiles;
         }
 
-
-
-        //generates the Map based on the file specified
-        //public void LoadFromFile(string mapFileName)
-        //{
-        //
-        //    Console.Write("loading in map");
-        //    //List<List<string>> mapText = new List<List<string>>();
-        //    //Tile[,] terrainTiles = new Tile[15,20];
-        //    terrainTiles = new Tile[15,20];
-        //
-        //    List<string> mapText = GetTerrainTextFromFile(mapFileName);
-        //
-        //    int x = 0;
-        //    int y = 0;
-        //    //load the tiles
-        //    for (x = 0; x < 20; x++)
-        //    {
-        //        for (y = 0; y < 15; y++)
-        //        {
-        //            string tileType = mapText[x*y];
-        //            if(x == 2 && y == 5)
-        //                ChangeTile(x,y,textureDict.dict["towerDefense_tile069"]);
-        //            else
-        //                ChangeTile(x,y, textureDict.dict["blank"]);
-        //
-        //        }
-        //    }
-        //    //load the decorations
-        //    List<string> decorationText = GetDecoTextFromFile(mapText);
-        //    Decorations.Clear();
-        //    for(int i = 0; i < decorationText.Count / 4; i++)
-        //    {
-        //        Texture2D textureForDeco = decoTextureDict.dict[decorationText[i * 4]];
-        //        int rectX = int.Parse(decorationText[i * 4 + 1]);
-        //        int rectY = int.Parse(decorationText[i * 4 + 2]);
-        //        float rot = float.Parse(decorationText[i * 4 + 3]);
-        //        Decorations.Add(new Decoration(new Rectangle(rectX, rectY, size, size), textureForDeco));
-        //    }
-        //    //return terrainTiles;
-        //}
-
-        //get the decoration text from the Map list used for loading the Map
-
+        /// <summary>
+        /// Load the map from a text file
+        /// </summary>
+        /// <param name="filename">File name to load the map from</param>
         public void LoadFromFile(string filename)
         {
-            List<string> terrainText = GetTerrainTextFromFile("Map.txt");
-            terrainTiles = CreateBlankMap();
+            //calls the helper function that gets the terrain text from a file
+            List<string> terrainText = GetTerrainTextFromFile(filename);
+            List<string> decoText = GetDecoTextFromMapText(terrainText);
 
+            //clears the map and decorations
+            TerrainTiles = MakeBlankTileGrid();
+            Decorations = new List<Decoration>();
+
+            //parse change the terrain tiles from the terrain text
             int tileCount = 0;
             for (var y = 0; y < 15; y++)
             {
                 for (var x = 0; x < 20; x++)
                 {
                     string tiletype = terrainText[tileCount];
-                    ChangeTile(x,y,textureDict.dict[tiletype]);
+                    ChangeTile(x,y,Textures.Tiles[tiletype]);
                     tileCount++;
                 }
             }
+
+            //parse and add the decorations from the deco text
+            for (int x = 0; x < decoText.Count / 4; x++)
+            {
+                string name = decoText[x * 4];
+                int rectX = int.Parse(decoText[x * 4 + 1]);
+                int rectY = int.Parse(decoText[x * 4 + 2]);
+                float rotation = float.Parse(decoText[x * 4 + 3]);
+                Texture2D texture = Textures.Decos[name];
+                Decorations.Add(new Decoration(new Rectangle(rectX, rectY, texture.Width, texture.Height), texture, rotation));
+            }
         }
 
-        private List<string> GetDecoTextFromFile(List<string> mapText)
+        /// <summary>
+        /// Save the map to a text file
+        /// </summary>
+        /// <param name="mapFileName">File name that you would like to use to save the file to</param>
+        public void SaveToFile(string mapFileName)
+        {
+            using (var sw = new StreamWriter(mapFileName))
+            {
+                //save the tile data
+                foreach(Tile t in TerrainTiles)
+                {
+                    string writeName = FormatTextureNameString(t.texture.Name);
+                    sw.WriteLine(writeName);
+                }
+
+                //mark the end of the tile data and then save key information about the decorations
+                //TODO - add the ability to make different sized decorations from the toolbox in the editor state
+                sw.WriteLine("====");
+                foreach(Decoration d in Decorations)
+                {
+                    string writeName = FormatTextureNameString(d.Texture.Name);
+                    sw.WriteLine(writeName);
+                    sw.WriteLine(d.Rect.X);
+                    sw.WriteLine(d.Rect.Y);
+                    sw.WriteLine(d.Rotation);
+                }
+                sw.Close();
+            }
+        }
+
+        #region Helper Methods
+        /// <summary>
+        /// Helper method to get the decoration text from the information that the other helper function outputted
+        /// </summary>
+        /// <seealso cref="GetTerrainTextFromFile"/>
+        /// <param name="mapText">List of the map text from the file</param>
+        /// <returns>Returns a list of information in the form of strings about the decorations in the map text</returns>
+        private List<string> GetDecoTextFromMapText(List<string> mapText)
         {
             List<string> decoText = new List<string>();
             int i = 0;
-            while(mapText[i] != "====")
+            //go until you reach the end of the tile data marked by "===="
+            while (mapText[i] != "====")
             {
                 i++;
             }
             i++;
-            for(int counter = i; i < mapText.Count; i++)
+            //for the rest of the text add it to the list which will be returned
+            for (int counter = i; i < mapText.Count; i++)
             {
                 decoText.Add(mapText[i]);
             }
             return decoText;
         }
 
-        //save to file
-        public void SaveToFile(string mapFileName)
-        {
-            using (var sw = new StreamWriter(mapFileName))
-            {
-                foreach(Tile t in terrainTiles)
-                {
-                    string writeName = FormatTextureNameString(t.texture.Name);
-                    sw.WriteLine(writeName);
-                }
-                //sw.WriteLine("====");
-                //foreach(Decoration d in Decorations)
-                //{
-                //    string writeName = FormatTextureNameString(d.Texture.Name);
-                //    sw.WriteLine(writeName);
-                //    sw.WriteLine(d.Rect.X);
-                //    sw.WriteLine(d.Rect.Y);
-                //    sw.WriteLine(d.rotation);
-                //}
-                sw.Close();
-            }
-        }
-
-        public string FormatTextureNameString(string tName)
+        /// <summary>
+        /// Helper method that formats the name of the texture to save to the text file that makes loading easier. Takes the file path out of the texture data and just returns the name of the texture
+        /// </summary>
+        /// <param name="tName">string that you would like to format</param>
+        /// <returns>Returns the texture name without the file path in front of it</returns>
+        private string FormatTextureNameString(string tName)
         {
             char[] cArray = tName.ToCharArray();
             int i = 0;
-            while(cArray[i] != '/')
+            while (cArray[i] != '/')
             {
                 i++;
             }
             i++;
-            return tName.Remove(0,i);
+            return tName.Remove(0, i);
         }
 
-        //get the strings of the tile types from a text file
+        /// <summary>
+        /// Helper method that gets the terrain text from file when loading the map
+        /// </summary>
+        /// <param name="mapFileName">file name that you would like to load the data from</param>
+        /// <returns>Returns a list of strings that has the decoration and tile data</returns>
         private List<string> GetTerrainTextFromFile(string mapFileName)
         {
             List<string> mapText = new List<string>();
 
             string line;
-            // Read the file and display it line by line.
+            // Read the file and add it line by line.
             System.IO.StreamReader file = new System.IO.StreamReader(mapFileName);
             while ((line = file.ReadLine()) != null)
             {
@@ -190,20 +192,39 @@ namespace AlchemyTowerDefense.GameData
             file.Close();
             return mapText;
         }
+        #endregion
 
+        #region Editor Functions
+        /// <summary>
+        /// Change the tile at the location
+        /// </summary>
+        /// <param name="x">Grid X location</param>
+        /// <param name="y">Grid Y location</param>
+        /// <param name="t">Texture that you would like to change the tile to</param>
         public void ChangeTile(int x, int y, Texture2D t)
         {
-            terrainTiles[y,x] = new Tile(new Rectangle(x * size, y * size, size, size), t); 
+            TerrainTiles[y,x] = new Tile(new Rectangle(x * Size, y * Size, Size, Size), t); 
         }
 
+        /// <summary>
+        /// Paint a tile at the location with a random rotation
+        /// </summary>
+        /// <param name="posx">Pixel position X</param>
+        /// <param name="posy">Pixel position Y</param>
+        /// <param name="t">Texture of the decoration that you are painting</param>
         public void PaintDecoration(int posx, int posy, Texture2D t)
         {
-            Decorations.Add(new Decoration(new Rectangle(posx /* - (size/2)*/, posy /*- (size/2)*/, size, size), t));
+            Decorations.Add(new Decoration(new Rectangle(posx, posy, Size, Size), t));
         }
+        #endregion
 
+        /// <summary>
+        /// Draws the tiles and the decorations to the screen
+        /// </summary>
+        /// <param name="spriteBatch"></param>
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach(Tile t in terrainTiles)
+            foreach(Tile t in TerrainTiles)
             {
                 t.draw(spriteBatch);
             }

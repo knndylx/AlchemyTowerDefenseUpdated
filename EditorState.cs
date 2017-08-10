@@ -109,7 +109,7 @@ namespace AlchemyTowerDefense
                 //if the brush is a tile
                 if (tileTextures.dict.ContainsValue(brushTexture))
                 {
-                    if (Map.terrainTiles[gridy, gridx].texture != brushTexture)
+                    if (Map.TerrainTiles[gridy, gridx].texture != brushTexture)
                         Map.ChangeTile(gridx, gridy, brushTexture);
                 }
                 //else if the brush is a decoration
@@ -117,7 +117,7 @@ namespace AlchemyTowerDefense
                 {
                     if(mInputProcessor.previousMouseState[Util.MouseButtons.Left] == ButtonState.Released)
                     {
-                        Map.PaintDecoration(Mouse.GetState().X, Mouse.GetState().Y, brushTexture);
+                        Map.AddDecoration(Mouse.GetState().X, Mouse.GetState().Y, brushTexture);
                     }
                 }
             }
