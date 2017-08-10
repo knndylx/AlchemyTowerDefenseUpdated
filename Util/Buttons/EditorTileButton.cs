@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AlchemyTowerDefense.Util.Buttons;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -11,7 +12,7 @@ namespace AlchemyTowerDefense.Util
     public class EditorTileButton : Button
     {
         //internal textures
-        private Texture2D highlightTexture = Textures.Icons["highlight"];
+        private Texture2D highlightTexture = GlobalConfig.Textures.Icons["highlight"];
 
         /// <summary>
         /// Constructor for the Editor Tile Button
