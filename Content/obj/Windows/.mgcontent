@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>D:/Github/AlchemyTowerDefense/Content/buttons/editorbutton.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/buttons/gamebutton.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/icons/highlight.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/icons/cursor.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/decos/towerDefense_tile130.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/decos/towerDefense_tile131.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/decos/towerDefense_tile132.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/decos/towerDefense_tile133.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/decos/towerDefense_tile134.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/decos/towerDefense_tile135.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/decos/towerDefense_tile136.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/decos/towerDefense_tile137.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile069.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile070.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile071.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile072.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile073.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile092.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile093.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile094.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile095.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile096.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile115.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile116.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile117.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile118.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/towerDefense_tile119.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/tiles/blank.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/toolbox/toolboxbackground.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/buttons/mainmenu.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/buttons/save.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/buttons/load.png</File>
+  </SourceFiles>
+</SourceFileCollection>
