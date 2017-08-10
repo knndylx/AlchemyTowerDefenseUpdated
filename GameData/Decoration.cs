@@ -13,7 +13,7 @@ namespace AlchemyTowerDefense.GameData
 {
     public class Decoration
     {
-        //all of the vars needed to draw the decoration with a Rotation
+        //all of the vars needed to Draw the decoration with a Rotation
         public Rectangle Rect { get; private set; }
         public Texture2D Texture { get; private set; }
         public float Rotation { get; private set; }

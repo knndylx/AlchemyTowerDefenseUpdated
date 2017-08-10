@@ -47,7 +47,7 @@ namespace AlchemyTowerDefense
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
+            // Create a new SpriteBatch, which can be used to Draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             gsm.LoadContent(Content);
 
@@ -82,7 +82,7 @@ namespace AlchemyTowerDefense
         }
 
         /// <summary>
-        /// This is called when the game should draw itself.
+        /// This is called when the game should Draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
@@ -91,7 +91,7 @@ namespace AlchemyTowerDefense
 
             spriteBatch.Begin();
             gsm.Draw(spriteBatch);
-            //Map.draw(spriteBatch);
+            //Map.Draw(spriteBatch);
             spriteBatch.End();
             
             base.Draw(gameTime);

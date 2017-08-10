@@ -51,7 +51,7 @@ namespace AlchemyTowerDefense
 
         private void UpdateCursor()
         {
-            //snaps the cursor x and y coordinates to a grid so that you can draw the cursor highlight over the top of the grid to show which tile you are highlighting
+            //snaps the cursor x and y coordinates to a grid so that you can Draw the cursor highlight over the top of the grid to show which tile you are highlighting
             cursorx = Mouse.GetState().X;
             cursory = Mouse.GetState().Y;
 

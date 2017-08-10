@@ -226,7 +226,7 @@ namespace AlchemyTowerDefense.GameData
         {
             foreach(Tile t in TerrainTiles)
             {
-                t.draw(spriteBatch);
+                t.Draw(spriteBatch);
             }
             foreach(Decoration d in Decorations)
             {

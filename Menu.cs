@@ -71,7 +71,7 @@ namespace AlchemyTowerDefense
             }
         }
 
-        //draw all buttons
+        //Draw all buttons
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (var b in buttons)

@@ -102,7 +102,7 @@ namespace AlchemyTowerDefense
 
 
 
-        //draw all buttons
+        //Draw all buttons
         public override void Draw(SpriteBatch spriteBatch)
         {
             Menu.Draw(spriteBatch);
