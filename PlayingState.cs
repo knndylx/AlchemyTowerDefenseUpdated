@@ -14,7 +14,7 @@ namespace AlchemyTowerDefense
     public class PlayingState: GameState
     {
 
-        private Map map;
+        private Map map = new Map(GlobalConfig.GameDimensions.Size);
 
         /// <summary>
         /// Initializes the playing state to load the map from the default file

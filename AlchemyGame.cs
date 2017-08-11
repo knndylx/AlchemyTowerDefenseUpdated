@@ -14,6 +14,7 @@ namespace AlchemyTowerDefense
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         GameStateManager gsm;
+        private int tileSize = 64;
 
         //all of the keys required for all states of the game
         List<Keys> keys = new List<Keys>()
@@ -29,6 +30,10 @@ namespace AlchemyTowerDefense
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferHeight = 960;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.ApplyChanges();
+            GlobalConfig.InitializeConfig(Content, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight, tileSize, keys);
             gsm = new GameStateManager();
         }
 
@@ -42,11 +47,9 @@ namespace AlchemyTowerDefense
         {
             // TODO: Add your initialization logic here
 
-            graphics.PreferredBackBufferHeight = 960;
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.ApplyChanges();
+            
             gsm.Initialize();
-            GlobalConfig.InitializeConfig(Content,graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight, keys);
+            
             base.Initialize();
         }
 

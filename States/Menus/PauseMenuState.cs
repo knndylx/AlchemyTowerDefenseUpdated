@@ -20,7 +20,6 @@ namespace AlchemyTowerDefense.States.Menus
         /// Initialize the Pause Menu
         /// </summary>
         /// <param name="g">Parent Game State Manager</param>
-        /// <param name="e">Parent Editor State</param>
         public void Initialize(GameStateManager g, EditorState e)
         {
             ParentEditorState = e;

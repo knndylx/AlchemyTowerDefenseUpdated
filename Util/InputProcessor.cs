@@ -28,6 +28,10 @@ namespace AlchemyTowerDefense.Util
         KeyboardState keyState;
         MouseState mouseState;
 
+        //mouse cursor values - cursor is pixel values
+        //                    - grid is the x, y coordinates on the grid
+        public int cursorx, cursory, gridx, gridy;
+
         /// <summary>
         /// Puts the keys that you want to process into the dictionary. Loads the default button states.
         /// </summary>
@@ -44,12 +48,15 @@ namespace AlchemyTowerDefense.Util
             }
             currentButtonStates = new Dictionary<Keys, bool>(previousButtonStates);
 
-            //initialize mouse
+            //initialize mouse buttons
             previousMouseState.Add(Util.MouseButtonsEnum.Right, mouseState.RightButton);
             previousMouseState.Add(Util.MouseButtonsEnum.Left, mouseState.LeftButton);
             previousScrollWheel = mouseState.ScrollWheelValue;
             currentScrollWheel = previousScrollWheel;
             currentMouseState = new Dictionary<Util.MouseButtonsEnum, ButtonState>(previousMouseState);
+
+            //mouse position
+            UpdateCursor();
         }
 
         /// <summary>
@@ -78,6 +85,31 @@ namespace AlchemyTowerDefense.Util
             currentScrollWheel = mouseState.ScrollWheelValue;
             currentMouseState[Util.MouseButtonsEnum.Right] = mouseState.RightButton;
             currentMouseState[Util.MouseButtonsEnum.Left] = mouseState.LeftButton;
+
+            UpdateCursor();
+        }
+
+        /// <summary>
+        /// Update the mouse cursor positions
+        /// </summary>
+        private void UpdateCursor()
+        {
+            //update cursor position
+            cursorx = Mouse.GetState().X;
+            cursory = Mouse.GetState().Y;
+
+            //bind mouse to the screen
+            if (cursorx < 0)
+                cursorx = 0;
+            else if (cursorx > 1279)
+                cursorx = 1279;
+            if (cursory < 0)
+                cursory = 0;
+            else if (cursory > 959)
+                cursory = 959;
+
+            gridx = (int)Math.Floor(cursorx / 64.0);
+            gridy = (int)Math.Floor(cursory / 64.0);
         }
 
     }

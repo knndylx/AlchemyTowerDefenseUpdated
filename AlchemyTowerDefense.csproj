@@ -42,11 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AlchemyGame.cs" />
-    <Compile Include="Editor\Toolbox.cs" />
+    <Compile Include="Editor\ToolboxState.cs" />
     <Compile Include="GameData\Decoration.cs" />
     <Compile Include="GlobalConfig.cs" />
-    <Compile Include="PauseMenuState.cs" />
-    <Compile Include="Textures.cs" />
+    <Compile Include="States\Menus\MainMenuState.cs" />
+    <Compile Include="States\Menus\PauseMenuState.cs" />
+    <Compile Include="Util\Textures.cs" />
     <Compile Include="Util\Buttons\Button.cs" />
     <Compile Include="EditorState.cs" />
     <Compile Include="GameData\Map.cs" />
@@ -57,12 +58,12 @@
     <Compile Include="Util\InputProcessor.cs" />
     <Compile Include="PlayingState.cs" />
     <Compile Include="GameStateManager.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MenuState.cs" />
+    <Compile Include="States\Menus\Menu.cs" />
+    <Compile Include="States\Menus\MenuState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Buttons\MenuButton.cs" />
-    <Compile Include="Util\MouseButtons.cs" />
+    <Compile Include="Util\MouseButtonsEnum.cs" />
     <Compile Include="Util\TextureDict.cs" />
   </ItemGroup>
   <ItemGroup>

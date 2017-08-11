@@ -86,7 +86,7 @@ namespace AlchemyTowerDefense.GameData
                 for (var x = 0; x < 20; x++)
                 {
                     string tiletype = terrainText[tileCount];
-                    ChangeTile(x,y,Textures.Tiles[tiletype]);
+                    ChangeTile(x,y,GlobalConfig.Textures.Tiles[tiletype]);
                     tileCount++;
                 }
             }
@@ -98,7 +98,7 @@ namespace AlchemyTowerDefense.GameData
                 int rectX = int.Parse(decoText[x * 4 + 1]);
                 int rectY = int.Parse(decoText[x * 4 + 2]);
                 float rotation = float.Parse(decoText[x * 4 + 3]);
-                Texture2D texture = Textures.Decos[name];
+                Texture2D texture = GlobalConfig.Textures.Decos[name];
                 Decorations.Add(new Decoration(new Rectangle(rectX, rectY, texture.Width, texture.Height), texture, rotation));
             }
         }
@@ -237,6 +237,5 @@ namespace AlchemyTowerDefense.GameData
                 d.Draw(spriteBatch);
             }
         }
-
     }
 }

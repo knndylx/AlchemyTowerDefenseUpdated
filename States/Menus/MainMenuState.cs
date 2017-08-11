@@ -10,16 +10,13 @@ namespace AlchemyTowerDefense.States.Menus
 {
     public class MainMenuState : MenuState
     {
-        private EditorState ParentEditorState;
 
         /// <summary>
         /// Initialize the Pause Menu
         /// </summary>
         /// <param name="g">Parent Game State Manager</param>
-        /// <param name="e">Parent Editor State</param>
-        public void Initialize(GameStateManager g, EditorState e)
+        public override void Initialize(GameStateManager g)
         {
-            ParentEditorState = e;
 
             //initialize the menu
             base.Initialize(g);

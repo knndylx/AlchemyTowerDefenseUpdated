@@ -13,20 +13,19 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AlchemyTowerDefense.Editor
 {
-    public class Toolbox
+    public class ToolboxState: GameState
     {
-        private Texture2D background = GlobalConfig.Textures.Toolbox["background"];
+        private EditorState ParentEditor;
+        private Texture2D background = GlobalConfig.Textures.Toolbox["toolboxbackground"];
         public List<EditorTileButton> tileButtons = new List<EditorTileButton>();
         private Rectangle rect;
-        public bool active = false;
 
-        /// <summary>
-        /// Default constructor for the toolbox
-        /// </summary>
-        public Toolbox()
+        public void Initialize(GameStateManager g, EditorState e)
         {
-            rect = new Rectangle(1280 - background.Width, 0, background.Width, background.Height);
+            ParentEditor = e;
+            rect = new Rectangle(GlobalConfig.GameDimensions.Width - background.Width, 0, background.Width, background.Height);
             PopulateToolbox();
+            base.Initialize(g);
         }
 
         /// <summary>
@@ -64,7 +63,7 @@ namespace AlchemyTowerDefense.Editor
         /// TODO: make something more elegant rather than active or inactive state in the editor, maybe its own toolbox state in the game state manager?
         public void Update()
         {
-            if (active) HandleInput(); 
+            HandleInput(); 
         }
 
         /// <summary>
@@ -98,6 +97,12 @@ namespace AlchemyTowerDefense.Editor
                 
             }
 
+            //check for click on button
+            if (GlobalConfig.Input.currentMouseState[Util.MouseButtonsEnum.Left] == ButtonState.Pressed)
+            {
+                 ParentEditor.brushTexture = ClickTileButton();
+            }
+
             //highlight buttons if the mouse is over them
             foreach (EditorTileButton b in tileButtons)
             {
@@ -115,24 +120,26 @@ namespace AlchemyTowerDefense.Editor
         /// <summary>
         /// Clicks a tile button if there is one highlighted
         /// </summary>
-        /// <returns>Returns the texture of the tile button that was clicked</returns>
+        /// <returns>Returns the texture of the tile button that was clicked or a blank texture
+        /// if there was no button highlighted</returns>
         public Texture2D ClickTileButton()
         {
             Button hButton = null;
             foreach (EditorTileButton b in tileButtons)
             {
-                if (b.IsHighlighted == true) hButton = b;
+                if (b.IsHighlighted) hButton = b;
             }
-            return hButton?.Texture;
+            if (hButton == null) return GlobalConfig.Textures.Tiles["blank"];
+            return hButton.Texture;
         }
 
         /// <summary>
         /// Draws the background and tile buttons of the toolbox
         /// </summary>
         /// <param name="spriteBatch"></param>
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            if (!active) return;
+            ParentEditor.Draw(spriteBatch);
             spriteBatch.Draw(background, rect, Color.White);
             foreach(EditorTileButton b in tileButtons)
             {
