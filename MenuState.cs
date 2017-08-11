@@ -18,7 +18,7 @@ namespace AlchemyTowerDefense
         public Menu menu = new Menu();
         
 
-        public void Initialize(GameStateManager g, List<string> buttonStringList)
+        public virtual void Initialize(GameStateManager g, List<string> buttonStringList)
         {
             menu.Initialize(buttonStringList);
             base.Initialize(g);

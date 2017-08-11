@@ -20,8 +20,8 @@ namespace AlchemyTowerDefense.Util.Buttons
         public bool IsHighlighted { get; private set; }
 
         //click event
-        public delegate void Click();
-        public event ClickEvent();
+        public delegate void ClickHandler();
+        public event ClickHandler ClickEvent;
 
         /// <summary>
         /// Constructs the button.
@@ -48,6 +48,14 @@ namespace AlchemyTowerDefense.Util.Buttons
         public void Dehighlight()
         {
             IsHighlighted = false;
+        }
+
+        /// <summary>
+        /// Clicks the button
+        /// </summary>
+        public void Click()
+        {
+            ClickEvent?.Invoke();
         }
 
         /// <summary>
