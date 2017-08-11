@@ -18,8 +18,8 @@ namespace AlchemyTowerDefense.Util
         public Dictionary<Keys, bool> currentButtonStates = new Dictionary<Keys, bool>();
 
         //mouse button state dictionaries
-        public Dictionary<Util.MouseButtons, ButtonState> previousMouseState = new Dictionary<Util.MouseButtons, ButtonState>();
-        public Dictionary<Util.MouseButtons, ButtonState> currentMouseState = new Dictionary<Util.MouseButtons, ButtonState>();
+        public Dictionary<Util.MouseButtonsEnum, ButtonState> previousMouseState = new Dictionary<Util.MouseButtonsEnum, ButtonState>();
+        public Dictionary<Util.MouseButtonsEnum, ButtonState> currentMouseState = new Dictionary<Util.MouseButtonsEnum, ButtonState>();
 
         //mouse scroll wheel values
         public int currentScrollWheel, previousScrollWheel;
@@ -45,11 +45,11 @@ namespace AlchemyTowerDefense.Util
             currentButtonStates = new Dictionary<Keys, bool>(previousButtonStates);
 
             //initialize mouse
-            previousMouseState.Add(Util.MouseButtons.Right, mouseState.RightButton);
-            previousMouseState.Add(Util.MouseButtons.Left, mouseState.LeftButton);
+            previousMouseState.Add(Util.MouseButtonsEnum.Right, mouseState.RightButton);
+            previousMouseState.Add(Util.MouseButtonsEnum.Left, mouseState.LeftButton);
             previousScrollWheel = mouseState.ScrollWheelValue;
             currentScrollWheel = previousScrollWheel;
-            currentMouseState = new Dictionary<Util.MouseButtons, ButtonState>(previousMouseState);
+            currentMouseState = new Dictionary<Util.MouseButtonsEnum, ButtonState>(previousMouseState);
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace AlchemyTowerDefense.Util
         {
             //update the previous state
             previousScrollWheel = currentScrollWheel;
-            previousMouseState = new Dictionary<Util.MouseButtons, ButtonState>(currentMouseState);
+            previousMouseState = new Dictionary<Util.MouseButtonsEnum, ButtonState>(currentMouseState);
             previousButtonStates = new Dictionary<Keys, bool>(currentButtonStates);
 
             //get the new state
@@ -76,8 +76,8 @@ namespace AlchemyTowerDefense.Util
 
             //update mouse
             currentScrollWheel = mouseState.ScrollWheelValue;
-            currentMouseState[Util.MouseButtons.Right] = mouseState.RightButton;
-            currentMouseState[Util.MouseButtons.Left] = mouseState.LeftButton;
+            currentMouseState[Util.MouseButtonsEnum.Right] = mouseState.RightButton;
+            currentMouseState[Util.MouseButtonsEnum.Left] = mouseState.LeftButton;
         }
 
     }

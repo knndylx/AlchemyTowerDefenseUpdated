@@ -10,17 +10,13 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 using AlchemyTowerDefense.Util;
+using AlchemyTowerDefense.GameData;
 
 namespace AlchemyTowerDefense
 {
     public class EditorState: GameState
     {
-        public GameData.Map Map { get; set; }
-
-        TextureDict tileTextures;
-        TextureDict mouseTextures;
-        TextureDict decorationTextures;
-
+        public Map Map { get; set; }
         Texture2D brushTexture;
         Texture2D mouseTexture;
         Texture2D highlightGridTexture;
@@ -102,7 +98,7 @@ namespace AlchemyTowerDefense
         private void HandleInput()
         {
             //if the left mouse button is pressed then paint the tile onto the Map
-            if (mInputProcessor.currentMouseState[Util.MouseButtons.Left] == ButtonState.Pressed && canvasActive == true)
+            if (mInputProcessor.currentMouseState[Util.MouseButtonsEnum.Left] == ButtonState.Pressed && canvasActive == true)
             {
                 //Console.WriteLine(string.Format("changing tile at x:{0} y:{1}",gridx, gridy));
 
@@ -115,14 +111,14 @@ namespace AlchemyTowerDefense
                 //else if the brush is a decoration
                 else if (decorationTextures.dict.ContainsValue(brushTexture))
                 {
-                    if(mInputProcessor.previousMouseState[Util.MouseButtons.Left] == ButtonState.Released)
+                    if(mInputProcessor.previousMouseState[Util.MouseButtonsEnum.Left] == ButtonState.Released)
                     {
                         Map.AddDecoration(Mouse.GetState().X, Mouse.GetState().Y, brushTexture);
                     }
                 }
             }
             //if the toolbox is active and the user clicked
-            else if (mInputProcessor.currentMouseState[Util.MouseButtons.Left] == ButtonState.Pressed && toolbox.active == true)
+            else if (mInputProcessor.currentMouseState[Util.MouseButtonsEnum.Left] == ButtonState.Pressed && toolbox.active == true)
             {
                 Texture2D textureClick = toolbox.ClickTileButton();
                 if (textureClick != null)

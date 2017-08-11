@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlchemyTowerDefense.Util
 {
-    public enum MouseButtons
+    public enum MouseButtonsEnum
     {
         None = 0x0,
         Left = 0x1,

@@ -23,7 +23,7 @@ namespace AlchemyTowerDefense
         public GameStateManager()
         {
             //add the three states to the states list
-            MainMenuState mainmenu = new MainMenuState();
+            MenuState mainmenu = new MenuState();
             states.Add(mainmenu);
             //mainmenu.StateChangeEvent += OnStateChange;
 
@@ -33,7 +33,7 @@ namespace AlchemyTowerDefense
             //editor.StateChangeDelegate += OnStateChange;
             states.Add(editor);
 
-            PauseMenuState editorPauseMenu = new PauseMenuState(editor);
+            PauseMenuState editorPauseMenu = new PauseMenuState();
             states.Add(editorPauseMenu);
             //editorPauseMenu.StateChangeEvent += OnStateChange;
 

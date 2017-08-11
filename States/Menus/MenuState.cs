@@ -3,27 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 
-namespace AlchemyTowerDefense
+namespace AlchemyTowerDefense.States.Menus
 {
     public class MenuState: GameState
     {
         private int buttonCursorIndex = 0;
         public Menu menu = new Menu();
         
-
-        public virtual void Initialize(GameStateManager g, List<string> buttonStringList)
+        /// <summary>
+        /// Initialize the buttons of the menu
+        /// </summary>
+        /// <param name="g">Parent Game State Manager</param>
+        /// <param name="buttonStringList">List of the buttons in order for the menu as strings</param>
+        public virtual void Initialize(GameStateManager g)
         {
-            menu.Initialize(buttonStringList);
             base.Initialize(g);
         }
 
+        /// <summary>
+        /// Process input and select the button each frame
+        /// </summary>
         public override void Update()
         {
             ProcessInput();
@@ -31,6 +36,10 @@ namespace AlchemyTowerDefense
             base.Update();
         }
 
+        /// <summary>
+        /// Iterates through the buttons and selects the button that corresponds to the button 
+        /// cursor index
+        /// </summary>
         private void SelectButton()
         {
             //make the button selected
@@ -42,6 +51,9 @@ namespace AlchemyTowerDefense
             }
         }
 
+        /// <summary>
+        /// Process the Input of the Menu State
+        /// </summary>
         public void ProcessInput()
         {
             //if the up button was pressed
