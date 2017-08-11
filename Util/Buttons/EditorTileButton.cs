@@ -28,9 +28,9 @@ namespace AlchemyTowerDefense.Util
         /// TODO - figure out what exactly the spritebatch does...
         public void Draw(SpriteBatch spriteBatch)
         {
-            if(IsHighlighted)
-                spriteBatch.Draw(highlightTexture, Rect, Color.White);
             spriteBatch.Draw(Texture, Rect, Color.White);
+            if (IsHighlighted)
+                spriteBatch.Draw(highlightTexture, Rect, Color.White);
         }
     }
 }

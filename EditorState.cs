@@ -80,7 +80,7 @@ namespace AlchemyTowerDefense
         public override void Draw(SpriteBatch spriteBatch)
         {
             Map.Draw(spriteBatch);
-            spriteBatch.Draw(highlightGridTexture, new Vector2(GlobalConfig.Input.cursorx, GlobalConfig.Input.cursory), Color.White);
+            spriteBatch.Draw(highlightGridTexture, new Vector2(GlobalConfig.Input.gridx * GlobalConfig.GameDimensions.Size, GlobalConfig.Input.gridy * GlobalConfig.GameDimensions.Size), Color.White);
             spriteBatch.Draw(mouseTexture, new Rectangle(GlobalConfig.Input.cursorx, GlobalConfig.Input.cursory, mouseTexture.Width, mouseTexture.Height), Color.White);
             base.Draw(spriteBatch);
         }

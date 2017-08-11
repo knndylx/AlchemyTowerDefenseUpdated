@@ -61,7 +61,7 @@ namespace AlchemyTowerDefense.Editor
         /// Handles scroll input and updates the buttons if highlighted
         /// </summary>
         /// TODO: make something more elegant rather than active or inactive state in the editor, maybe its own toolbox state in the game state manager?
-        public void Update()
+        public override void Update()
         {
             HandleInput(); 
         }
@@ -97,6 +97,13 @@ namespace AlchemyTowerDefense.Editor
                 
             }
 
+            //if T is pressed go back to the editor
+            if (GlobalConfig.Input.currentButtonStates[Keys.T] &&
+                !GlobalConfig.Input.previousButtonStates[Keys.T])
+            {
+                ChangeState(GameStateEnum.Editor);
+            }
+
             //check for click on button
             if (GlobalConfig.Input.currentMouseState[Util.MouseButtonsEnum.Left] == ButtonState.Pressed)
             {
@@ -106,7 +113,7 @@ namespace AlchemyTowerDefense.Editor
             //highlight buttons if the mouse is over them
             foreach (EditorTileButton b in tileButtons)
             {
-                if (b.Rect.Contains(Mouse.GetState().X, Mouse.GetState().Y))
+                if (b.Rect.Contains(GlobalConfig.Input.cursorx, GlobalConfig.Input.cursory))
                 {
                     b.Highlight();
                 }
@@ -141,10 +148,12 @@ namespace AlchemyTowerDefense.Editor
         {
             ParentEditor.Draw(spriteBatch);
             spriteBatch.Draw(background, rect, Color.White);
-            foreach(EditorTileButton b in tileButtons)
+            foreach (EditorTileButton b in tileButtons)
             {
                 b.Draw(spriteBatch);
             }
+            Texture2D mouseTexture = GlobalConfig.Textures.Icons["cursor"];
+            spriteBatch.Draw(mouseTexture,new Rectangle(GlobalConfig.Input.cursorx,GlobalConfig.Input.cursory, mouseTexture.Width, mouseTexture.Height),Color.White);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace AlchemyTowerDefense
             playingState.Initialize(this);
             gamePausePlaceholder.Initialize(this, editorState);
             editorPauseMenuState.Initialize(this, editorState);
-            toolboxState.Initialize(this);
+            toolboxState.Initialize(this,editorState);
             editorState.Initialize(this);
         }
         public void LoadContent(ContentManager c)
@@ -74,13 +74,6 @@ namespace AlchemyTowerDefense
         {
             currentState.Draw(spriteBatch);
         }
-
-        //public void OnStateChange(int i)
-        //{
-        //    Console.Write("state changed " + i + "//");
-        //    State = i;
-        //    currentState = states[State];
-        //}
 
         /// <summary>
         /// Change the active state
