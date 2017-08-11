@@ -13,7 +13,7 @@ namespace AlchemyTowerDefense
     public static class GlobalConfig
     {
         public static Textures Textures { get; private set; } = new Textures();
-        public static ScreenSize Screen { get; private set; }
+        public static Dimensions GameDimensions { get; private set; }
         public static InputProcessor Input { get; private set; } = new InputProcessor();
 
         /// <summary>
@@ -22,26 +22,28 @@ namespace AlchemyTowerDefense
         /// <param name="c">Content Manager</param>
         /// <param name="w">Width of the screen</param>
         /// <param name="h">Height of the screen</param>
+        /// <param name="s">Size of the tiles on the map</param>
         /// <param name="keys">All of the keys to use for every state of the game</param>
-        public static void InitializeConfig(ContentManager c, int w, int h, List<Keys> keys)
+        public static void InitializeConfig(ContentManager c, int w, int h,int s, List<Keys> keys)
         {
             Textures.Initialize(c);
-            Screen = new ScreenSize(w,h);
+            GameDimensions = new Dimensions(w,h,s);
             Input.Initialize(keys);
         }
 
         /// <summary>
         /// Container for the screen size
         /// </summary>
-        public class ScreenSize
+        public class Dimensions
         {
             public int Width { get; private set; }
             public int Height { get; private set; }
-
-            public ScreenSize(int w, int h)
+            public int Size { get; private set; }
+            public Dimensions(int w, int h, int s)
             {
                 Width = w;
                 Height = h;
+                Size = s;
             }
         }
     }

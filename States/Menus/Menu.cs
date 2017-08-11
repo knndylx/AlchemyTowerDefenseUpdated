@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Content;
 using AlchemyTowerDefense.Util;
 using AlchemyTowerDefense.Util.Buttons;
 
-namespace AlchemyTowerDefense
+namespace AlchemyTowerDefense.States.Menus
 {
     public class Menu
     {
@@ -56,8 +56,8 @@ namespace AlchemyTowerDefense
             for(var i = 0; i < buttons.Count; i++)
             {
                 var b = buttons[i];
-                b.ChangeRect(new Rectangle(GlobalConfig.Screen.Width / 2 - b.Rect.Width / 2,
-                                          (GlobalConfig.Screen.Height / (buttons.Count + 1)) + ((GlobalConfig.Screen.Height / (buttons.Count + 1)) * i) - (b.Rect.Height / 2),
+                b.ChangeRect(new Rectangle(GlobalConfig.GameDimensions.Width / 2 - b.Rect.Width / 2,
+                                          (GlobalConfig.GameDimensions.Height / (buttons.Count + 1)) + ((GlobalConfig.GameDimensions.Height / (buttons.Count + 1)) * i) - (b.Rect.Height / 2),
                                           b.Rect.Width,
                                           b.Rect.Height));
             }
