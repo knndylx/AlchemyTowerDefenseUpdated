@@ -11,12 +11,17 @@ namespace AlchemyTowerDefense
 {
     public class Textures
     {
+        //These hold all applicable texture data
         public Dictionary<string, Texture2D> Tiles { get; private set; } = new Dictionary<string, Texture2D>();
         public Dictionary<string, Texture2D> Buttons { get; private set; } = new Dictionary<string, Texture2D>();
         public Dictionary<string, Texture2D> Decos { get; private set; } = new Dictionary<string, Texture2D>();
         public Dictionary<string, Texture2D> Icons { get; private set; } = new Dictionary<string, Texture2D>();
         public Dictionary<string, Texture2D> Toolbox { get; private set; } = new Dictionary<string, Texture2D>();
 
+        /// <summary>
+        /// Build the texture dictionaries
+        /// </summary>
+        /// <param name="c">Original content manager that contains the texture information</param>
         public void Initialize(ContentManager c)
         {
             Tiles = LoadTextureContent("tiles", c);
@@ -26,6 +31,12 @@ namespace AlchemyTowerDefense
             Toolbox = LoadTextureContent("toolbox", c);
         }
 
+        /// <summary>
+        /// Loads the texture content. Helper method for loading all of the dictionaries
+        /// </summary>
+        /// <param name="contentFolder">Sub-folder that content loads from</param>
+        /// <param name="c">Original content manager that contains the texture information</param>
+        /// <returns></returns>
         private Dictionary<string, Texture2D> LoadTextureContent(string contentFolder, ContentManager c)
         {
             Dictionary<string, Texture2D> td = new Dictionary<string, Texture2D>();

@@ -55,13 +55,15 @@ namespace AlchemyTowerDefense.GameData
             {
                 for (int y = 0; y < 15; y++)
                 {
-                    terrainTiles[y, x] = new Tile(new Rectangle(x * Size, y * Size, Size, Size), Textures.Tiles["blank"]);
+                    terrainTiles[y, x] = new Tile(new Rectangle(x * Size, y * Size, Size, Size), GlobalConfig.Textures.Tiles["blank"]);
 
                 }
             }
 
             return terrainTiles;
         }
+
+        #region Save and Load
 
         /// <summary>
         /// Load the map from a text file
@@ -130,6 +132,8 @@ namespace AlchemyTowerDefense.GameData
                 sw.Close();
             }
         }
+
+        #endregion
 
         #region Helper Methods
         /// <summary>

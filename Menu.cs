@@ -15,31 +15,16 @@ using AlchemyTowerDefense.Util.Buttons;
 namespace AlchemyTowerDefense
 {
     public class Menu
-
     {
-        TextureDict textures;
-        int screenWidth, screenHeight;
-        public List<Button> buttons = new List<Button>();
-        //private int cursorx, cursory, gridx, gridy;
+        //buttons on the screen
+        public List<MenuButton> buttons = new List<MenuButton>();
 
-        //InputProcessor input = new InputProcessor();
-
-
-
-        public Menu(int w, int h)
+        /// <summary>
+        /// Buttons are constructed from a list of strings that are the title and texture of the button
+        /// </summary>
+        /// <param name="buttonStringList">List of strings that are buttons names and textures</param>
+        public void Initialize(List<string> buttonStringList)
         {
-            this.screenWidth = w;
-            this.screenHeight = h;
-        }
-
-        public void Initialize()
-        {
-            
-        }
-
-        public void LoadContent(ContentManager c, List<string> buttonStringList)
-        {
-            textures = new TextureDict(c, "buttons");
             foreach (var s in buttonStringList)
             {
                 buttons.Add(MakeButton(s, 300, 100));
@@ -47,31 +32,41 @@ namespace AlchemyTowerDefense
             FinalizeButtons();
         }
 
-        //add a button centered horizontally to the menu
-        public Button MakeButton(string buttonName, int buttonWidth, int buttonHeight)
+        /// <summary>
+        /// Preliminarily add button to the list of buttons. Must also be called with finalize buttons
+        /// once all buttons are added
+        /// </summary>
+        /// <param name="buttonName">Name of the button</param>
+        /// <param name="buttonWidth">Width of the button</param>
+        /// <param name="buttonHeight">Height of the button</param>
+        /// <returns></returns>
+        public MenuButton MakeButton(string buttonName, int buttonWidth, int buttonHeight)
         {
-            var texture = textures.dict[buttonName];
-            var button = new Button(texture, new Rectangle(0,
-                                                                        0,
-                                                                        buttonWidth,
-                                                                        buttonHeight));
-            //buttons.Add(button);
+            Texture2D texture = GlobalConfig.Textures.Buttons[buttonName];
+            MenuButton button = new MenuButton(texture, new Rectangle(0, 0, buttonWidth, buttonHeight));
             return button;
         }
 
+        /// <summary>
+        /// Called once all of the buttons are added to the list using MakeButton.
+        /// Centers the buttons horizontally on the screen and spaces them evenly vertically
+        /// </summary>
         public void FinalizeButtons()
         {
             for(var i = 0; i < buttons.Count; i++)
             {
                 var b = buttons[i];
-                b.ChangeRect(new Rectangle(screenWidth / 2 - b.Rect.Width / 2,
-                                          (screenHeight / (buttons.Count + 1)) + ((screenHeight / (buttons.Count + 1)) * i) - (b.Rect.Height / 2),
+                b.ChangeRect(new Rectangle(GlobalConfig.Screen.Width / 2 - b.Rect.Width / 2,
+                                          (GlobalConfig.Screen.Height / (buttons.Count + 1)) + ((GlobalConfig.Screen.Height / (buttons.Count + 1)) * i) - (b.Rect.Height / 2),
                                           b.Rect.Width,
                                           b.Rect.Height));
             }
         }
 
-        //Draw all buttons
+        /// <summary>
+        /// Draw all buttons
+        /// </summary>
+        /// <param name="spriteBatch"></param>
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (var b in buttons)

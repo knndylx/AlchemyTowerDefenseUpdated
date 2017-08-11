@@ -29,7 +29,7 @@ namespace AlchemyTowerDefense
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            gsm = new GameStateManager(Content);
+            gsm = new GameStateManager();
         }
 
         /// <summary>
@@ -42,8 +42,8 @@ namespace AlchemyTowerDefense
         {
             // TODO: Add your initialization logic here
 
-            graphics.PreferredBackBufferHeight = gsm.currentState.ScreenHeight;
-            graphics.PreferredBackBufferWidth = gsm.currentState.ScreenWidth;
+            graphics.PreferredBackBufferHeight = 960;
+            graphics.PreferredBackBufferWidth = 1280;
             graphics.ApplyChanges();
             gsm.Initialize();
             GlobalConfig.InitializeConfig(Content,graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight, keys);
@@ -101,7 +101,6 @@ namespace AlchemyTowerDefense
 
             spriteBatch.Begin();
             gsm.Draw(spriteBatch);
-            //Map.Draw(spriteBatch);
             spriteBatch.End();
             
             base.Draw(gameTime);

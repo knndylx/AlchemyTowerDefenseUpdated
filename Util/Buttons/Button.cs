@@ -19,6 +19,10 @@ namespace AlchemyTowerDefense.Util.Buttons
         //status vars
         public bool IsHighlighted { get; private set; }
 
+        //click event
+        public delegate void Click();
+        public event ClickEvent();
+
         /// <summary>
         /// Constructs the button.
         /// </summary>
