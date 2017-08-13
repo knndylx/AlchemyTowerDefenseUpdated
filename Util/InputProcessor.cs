@@ -30,7 +30,7 @@ namespace AlchemyTowerDefense.Util
 
         //mouse cursor values - cursor is pixel values
         //                    - grid is the x, y coordinates on the grid
-        public int cursorx, cursory, gridx, gridy;
+        public int cursorx, cursory, gridx, gridy, smallgridx, smallgridy;
 
         /// <summary>
         /// Puts the keys that you want to process into the dictionary. Loads the default button states.
@@ -110,6 +110,9 @@ namespace AlchemyTowerDefense.Util
 
             gridx = (int)Math.Floor(cursorx / 64.0);
             gridy = (int)Math.Floor(cursory / 64.0);
+
+            smallgridx = (int)Math.Floor((cursorx + 16) / 32.0);
+            smallgridy = (int)Math.Floor((cursory + 16) / 32.0);
         }
 
     }

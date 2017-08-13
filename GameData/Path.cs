@@ -15,9 +15,23 @@ namespace AlchemyTowerDefense.GameData
         /// </summary>
         public class PathNode
         {
-            private int x, y;
+            public int x { get; private set; }
+            public int y { get; private set; }
             public PathNode previousNode, nextNode;
             private Texture2D texture = GlobalConfig.Textures.Icons["pathnode"];
+
+            public PathNode(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+
+            public PathNode(int x, int y, PathNode pNode)
+            {
+                this.x = x;
+                this.y = y;
+                previousNode = pNode;
+            }
 
             /// <summary>
             /// Draws the node in a color that depends on if its a start node, end node, or in the middle
@@ -27,14 +41,14 @@ namespace AlchemyTowerDefense.GameData
             {
                 if (previousNode == null)
                 {
-                    spriteBatch.Draw(texture, new Rectangle(x,y,texture.Width,texture.Height), Color.Green);
+                    spriteBatch.Draw(texture, new Rectangle(x - 16 ,y - 16 ,texture.Width,texture.Height), Color.Green);
                 } else if (nextNode == null)
                 {
-                    spriteBatch.Draw(texture, new Rectangle(x, y, texture.Width, texture.Height), Color.Red);
+                    spriteBatch.Draw(texture, new Rectangle(x - 16, y - 16, texture.Width, texture.Height), Color.Red);
                 }
                 else
                 {
-                    spriteBatch.Draw(texture, new Rectangle(x, y, texture.Width, texture.Height), Color.White);
+                    spriteBatch.Draw(texture, new Rectangle(x - 16, y - 16, texture.Width, texture.Height), Color.White);
                 }
             }
         }
@@ -68,14 +82,52 @@ namespace AlchemyTowerDefense.GameData
         }
 
         /// <summary>
-        /// Adds a node to the Path node
+        /// Adds a node to the Path node. Can only add if either the x or y are the same for the previous node
         /// </summary>
         /// <param name="node">Node that you would like to add to</param>
-        public void AddNode(PathNode node, PathNode newNode)
+        public void AddNode(int x, int y)
         {
-            if (node.nextNode == null)
+            if (startNode == null)
             {
-                node.nextNode = newNode;
+                startNode = new PathNode(x, y);
+            }
+            else
+            {
+                if(GetLastNode().x == x || GetLastNode().y == y)
+                    GetLastNode().nextNode = new PathNode(x,y,GetLastNode());
+            }
+        }
+
+        /// <summary>
+        /// Get the last node in the path
+        /// </summary>
+        /// <returns></returns>
+        public PathNode GetLastNode()
+        {
+            PathNode currentNode = startNode;
+            while(currentNode.nextNode != null)
+            {
+                currentNode = currentNode.nextNode;
+            }
+            return currentNode;
+        }
+
+        /// <summary>
+        /// Deletes the last node in the sequence. If there is only one node it deletes every node from the path
+        /// </summary>
+        public void DeleteLastNode()
+        {
+            Console.WriteLine("deleting node");
+            if (startNode == null) return;
+            if (GetLastNode() == startNode)
+            {
+                startNode = null;
+            }
+            else
+            {
+                PathNode last = GetLastNode();
+                PathNode newLast = last.previousNode;
+                newLast.nextNode = null;
             }
         }
 
@@ -86,9 +138,54 @@ namespace AlchemyTowerDefense.GameData
         public void Draw(SpriteBatch spriteBatch)
         {
             PathNode currentNode = startNode;
+            int lineWidth = 4;
+            Texture2D lineTexture = GlobalConfig.Textures.Icons["pathline"];
+            Texture2D nodeTexture = GlobalConfig.Textures.Icons["pathnode"];
+
             while (currentNode != null)
             {
                 currentNode.Draw(spriteBatch);
+
+                //draw the lines connecting the nodes
+                if (currentNode.x == currentNode.previousNode?.x)
+                {
+                    //if the previous node is below the current node on the x axis
+                    if (currentNode.y > currentNode.previousNode.y)
+                    {
+                        spriteBatch.Draw(lineTexture,new Rectangle(currentNode.previousNode.x - (lineWidth / 2),
+                                                                   currentNode.previousNode.y + (nodeTexture.Height/2),
+                                                                   lineWidth,
+                                                                   (currentNode.y - currentNode.previousNode.y - nodeTexture.Height)), Color.White);
+                    }
+                    //if the previous node is below the current node on the x axis
+                    if (currentNode.y < currentNode.previousNode.y)
+                    {
+                        spriteBatch.Draw(lineTexture, new Rectangle(currentNode.x - (lineWidth / 2),
+                                                                    currentNode.y + (nodeTexture.Height/2),
+                                                                    lineWidth,
+                                                                    (currentNode.previousNode.y - currentNode.y - nodeTexture.Height)), Color.White);
+                    }
+                }
+                //else if the nodes are aligned on the y-axis
+                if (currentNode.y == currentNode.previousNode?.y)
+                {
+                    //if the previous node is to the right of the current node
+                    if (currentNode.x < currentNode.previousNode.x)
+                    {
+                        spriteBatch.Draw(lineTexture, new Rectangle(currentNode.x + (nodeTexture.Width /2),
+                                                                    currentNode.y - (lineWidth/2),
+                                                                    (currentNode.previousNode.x - currentNode.x - nodeTexture.Width),
+                                                                    lineWidth), Color.White);
+                    }
+                    //if the previous node is to the left of the current node
+                    if (currentNode.x > currentNode.previousNode.x)
+                    {
+                        spriteBatch.Draw(lineTexture, new Rectangle(currentNode.previousNode.x + (nodeTexture.Width / 2),
+                                                                    currentNode.previousNode.y - (lineWidth / 2),
+                                                                    (currentNode.x - currentNode.previousNode.x - nodeTexture.Width),
+                                                                    lineWidth), Color.White);
+                    }
+                }
                 currentNode = currentNode.nextNode;
             }
         }

@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AlchemyGame.cs" />
+    <Compile Include="GameData\Path.cs" />
     <Compile Include="States\ToolboxState.cs" />
     <Compile Include="GameData\Decoration.cs" />
     <Compile Include="GlobalConfig.cs" />

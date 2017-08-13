@@ -160,6 +160,8 @@ D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XInput.xml
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
-D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.csprojResolveAssemblyReference.cache
 D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.exe
 D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.pdb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\pathnode.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\pathline.xnb
+D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.csprojResolveAssemblyReference.cache

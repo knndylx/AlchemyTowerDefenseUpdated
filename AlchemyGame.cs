@@ -23,7 +23,8 @@ namespace AlchemyTowerDefense
             Keys.Down,
             Keys.Escape,
             Keys.T,
-            Keys.Enter
+            Keys.Enter,
+            Keys.Z
         };
 
         public AlchemyGame()

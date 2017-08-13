@@ -40,6 +40,8 @@ namespace AlchemyTowerDefense.States
             //combine the two lists together
             tileList = tileList.Concat(decoList).ToList();
 
+            tileList.Add(GlobalConfig.Textures.Icons["pathnode"]);
+
             int padding = 20;
 
             int i = 0;
@@ -48,11 +50,17 @@ namespace AlchemyTowerDefense.States
             foreach(Texture2D t in tileList)
             {
                 tileButtons.Add(new EditorTileButton(t, new Rectangle((rect.Left + padding + k * 84), (rect.Top + padding + i * 84), 64, 64)));
-                i++;
-                if(i % (tileList.Count / 2) == 0)
+                //i++;
+                //if(i % (tileList.Count / 2) == 0)
+                //{
+                //    i = 0;
+                //    k++;
+                //}
+                k++;
+                if (k % 2 == 0)
                 {
-                    i = 0;
-                    k++;
+                    k = 0;
+                    i++;
                 }
             }
         }

@@ -20,6 +20,7 @@ namespace AlchemyTowerDefense.GameData
         //TODO - Fragile solution, binds the Size of the screen to a set number so no change of resolution is possible yet
         public Tile[,] TerrainTiles { get; private set; } = new Tile[15, 20];
         public List<Decoration> Decorations { get; private set; } = new List<Decoration>();
+        public Path path = new Path();
 
         //Size of the tiles on the map
         private int Size;
@@ -220,6 +221,16 @@ namespace AlchemyTowerDefense.GameData
         {
             Decorations.Add(new Decoration(new Rectangle(posx, posy, Size, Size), t));
         }
+        
+        /// <summary>
+        /// Add a node to the path
+        /// </summary>
+        /// <param name="smallgridx">position x on the small grid coordinates</param>
+        /// <param name="smallgridy">position y on the small grid coordinates</param>
+        public void AddPathNode(int smallgridx, int smallgridy)
+        {
+            path.AddNode(smallgridx*Size/2, smallgridy*Size/2);
+        }
         #endregion
 
         /// <summary>
@@ -236,6 +247,7 @@ namespace AlchemyTowerDefense.GameData
             {
                 d.Draw(spriteBatch);
             }
+            path.Draw(spriteBatch);
         }
     }
 }

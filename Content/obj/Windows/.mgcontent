@@ -36,5 +36,7 @@
     <File>D:/Github/AlchemyTowerDefense/Content/buttons/mainmenu.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/buttons/save.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/buttons/load.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/icons/pathnode.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/icons/pathline.png</File>
   </SourceFiles>
 </SourceFileCollection>
