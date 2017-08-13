@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AlchemyGame.cs" />
-    <Compile Include="Editor\ToolboxState.cs" />
+    <Compile Include="States\ToolboxState.cs" />
     <Compile Include="GameData\Decoration.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="States\Menus\MainMenuState.cs" />

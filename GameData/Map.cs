@@ -99,7 +99,7 @@ namespace AlchemyTowerDefense.GameData
                 int rectY = int.Parse(decoText[x * 4 + 2]);
                 float rotation = float.Parse(decoText[x * 4 + 3]);
                 Texture2D texture = GlobalConfig.Textures.Decos[name];
-                Decorations.Add(new Decoration(new Rectangle(rectX, rectY, texture.Width, texture.Height), texture, rotation));
+                Decorations.Add(new Decoration(new Rectangle(rectX, rectY, Size, Size), texture, rotation));
             }
         }
 

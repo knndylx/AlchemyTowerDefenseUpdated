@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace AlchemyTowerDefense.Editor
+namespace AlchemyTowerDefense.States
 {
     public class ToolboxState: GameState
     {
@@ -60,7 +60,6 @@ namespace AlchemyTowerDefense.Editor
         /// <summary>
         /// Handles scroll input and updates the buttons if highlighted
         /// </summary>
-        /// TODO: make something more elegant rather than active or inactive state in the editor, maybe its own toolbox state in the game state manager?
         public override void Update()
         {
             HandleInput(); 
@@ -121,6 +120,12 @@ namespace AlchemyTowerDefense.Editor
                 {
                     b.Dehighlight();
                 }
+            }
+
+            if (GlobalConfig.Input.currentButtonStates[Keys.Escape] &&
+                !GlobalConfig.Input.previousButtonStates[Keys.Escape])
+            {
+                ChangeState(GameStateEnum.EditorPauseMenu);
             }
         }
 

@@ -11,7 +11,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 using AlchemyTowerDefense.Util;
 using AlchemyTowerDefense.GameData;
-using AlchemyTowerDefense.Editor;
 
 namespace AlchemyTowerDefense
 {
@@ -40,6 +39,7 @@ namespace AlchemyTowerDefense
             HandleInput();
         }
 
+        //TODO: make it so the highlight texture doesn't show up unless you're drawing a tile
         private void HandleInput()
         {
             //if the left mouse button is pressed then paint the tile onto the Map

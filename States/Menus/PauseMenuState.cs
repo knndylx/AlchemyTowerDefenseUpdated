@@ -47,7 +47,8 @@ namespace AlchemyTowerDefense.States.Menus
         /// TODO: make the save and load variable so you can select a file
         public void OnSaveButtonClick()
         {
-            ParentEditorState.Map.LoadFromFile("map.txt");
+            ParentEditorState.Map.SaveToFile("map.txt");
+            ChangeState(GameStateEnum.Editor);
         }
 
         /// <summary>
@@ -55,7 +56,8 @@ namespace AlchemyTowerDefense.States.Menus
         /// </summary>
         public void OnLoadButtonClick()
         {
-            ParentEditorState.Map.SaveToFile("map.txt");
+            ParentEditorState.Map.LoadFromFile("map.txt");
+            ChangeState(GameStateEnum.Editor);
         }
 
         /// <summary>
