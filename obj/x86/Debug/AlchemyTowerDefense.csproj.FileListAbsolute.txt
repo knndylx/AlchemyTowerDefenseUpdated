@@ -1,113 +1,3 @@
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\AlchemyTowerDefense.exe
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\AlchemyTowerDefense.pdb
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\MonoGame.Framework.dll
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.dll
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.DXGI.dll
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XInput.dll
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\MonoGame.Framework.xml
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.xml
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.DXGI.xml
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XInput.xml
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.csprojResolveAssemblyReference.cache
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.exe
-c:\users\akenn\documents\visual studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.pdb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile069.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile070.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile071.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile092.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile093.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile094.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile115.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile116.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile117.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\editorbutton.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\gamebutton.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\blank.png
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\cursor.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\highlight.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile130.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile131.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile132.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile133.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile134.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile135.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile136.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile137.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile072.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile073.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile095.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile096.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile118.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile119.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\blank.xnb
-C:\Users\akenn\Documents\Visual Studio 2017\Projects\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\toolbox\toolboxbackground.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.csprojResolveAssemblyReference.cache
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.exe
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.pdb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\blank.png
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\editorbutton.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\gamebutton.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile130.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile131.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile132.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile133.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile134.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile135.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile136.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile137.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\cursor.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\highlight.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\blank.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile069.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile070.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile071.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile072.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile073.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile092.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile093.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile094.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile095.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile096.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile115.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile116.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile117.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile118.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile119.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\toolbox\toolboxbackground.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\AlchemyTowerDefense.exe
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\AlchemyTowerDefense.pdb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\MonoGame.Framework.dll
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.dll
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.DXGI.dll
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XInput.dll
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\MonoGame.Framework.xml
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.xml
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.DXGI.xml
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XInput.xml
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\load.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\mainmenu.xnb
-C:\Users\akenn\Documents\GitHub\AlchemyTowerDefense\AlchemyTowerDefense\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\save.xnb
-D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\blank.png
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\editorbutton.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\gamebutton.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\buttons\load.xnb
@@ -123,6 +13,9 @@ D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_t
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\decos\towerDefense_tile137.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\cursor.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\highlight.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\pathline.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\pathnode.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\blank.png
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\blank.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile069.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\tiles\towerDefense_tile070.xnb
@@ -160,8 +53,6 @@ D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.XInput.xml
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.csprojResolveAssemblyReference.cache
 D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.exe
 D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.pdb
-D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\pathnode.xnb
-D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\pathline.xnb
-D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.csprojResolveAssemblyReference.cache

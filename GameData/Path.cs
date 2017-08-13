@@ -53,7 +53,27 @@ namespace AlchemyTowerDefense.GameData
             }
         }
 
-        private PathNode startNode;
+        public PathNode startNode { get; private set; }
+
+        /// <summary>
+        /// Initialize the path from a list of path nodes in order from starting node to end
+        /// </summary>
+        /// <param name="path">list of path nodes to make the path from</param>
+        public Path(List<PathNode> path)
+        {
+            foreach (PathNode node in path)
+            {
+                AddNode(node);
+            }
+        }
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public Path()
+        {
+            
+        }
 
         /// <summary>
         /// Connects two nodes together if the connection is value
@@ -82,9 +102,10 @@ namespace AlchemyTowerDefense.GameData
         }
 
         /// <summary>
-        /// Adds a node to the Path node. Can only add if either the x or y are the same for the previous node
+        /// Adds a node to the end of the path. Can only add if either the x or y are aligned with the previous node.
         /// </summary>
-        /// <param name="node">Node that you would like to add to</param>
+        /// <param name="x">x of the new node</param>
+        /// <param name="y">y of the new node</param>
         public void AddNode(int x, int y)
         {
             if (startNode == null)
@@ -95,6 +116,23 @@ namespace AlchemyTowerDefense.GameData
             {
                 if(GetLastNode().x == x || GetLastNode().y == y)
                     GetLastNode().nextNode = new PathNode(x,y,GetLastNode());
+            }
+        }
+
+        /// <summary>
+        /// Adds the node to the end of the path if and only if the x or y are aligned with the last node
+        /// </summary>
+        /// <param name="node">The node that you would like to add</param>
+        public void AddNode(PathNode node)
+        {
+            if (startNode == null)
+            {
+                startNode = node;
+            }
+            else
+            {
+                if (GetLastNode().x == node.x || GetLastNode().y == node.y)
+                    GetLastNode().nextNode = node;
             }
         }
 

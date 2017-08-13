@@ -75,6 +75,7 @@ namespace AlchemyTowerDefense.GameData
             //calls the helper function that gets the terrain text from a file
             List<string> terrainText = GetTerrainTextFromFile(filename);
             List<string> decoText = GetDecoTextFromMapText(terrainText);
+            List<string> pathText = GetPathTextFromMapText(terrainText);
 
             //clears the map and decorations
             TerrainTiles = MakeBlankTileGrid();
@@ -93,6 +94,9 @@ namespace AlchemyTowerDefense.GameData
             }
 
             //parse and add the decorations from the deco text
+            if(decoText.Count % 4 != 0)
+                Console.WriteLine("error: not the right number of decos text in the file");
+
             for (int x = 0; x < decoText.Count / 4; x++)
             {
                 string name = decoText[x * 4];
@@ -101,6 +105,17 @@ namespace AlchemyTowerDefense.GameData
                 float rotation = float.Parse(decoText[x * 4 + 3]);
                 Texture2D texture = GlobalConfig.Textures.Decos[name];
                 Decorations.Add(new Decoration(new Rectangle(rectX, rectY, Size, Size), texture, rotation));
+            }
+
+            //parse and add the path nodes from the path text
+            if(pathText.Count % 2 != 0)
+                Console.WriteLine("error: not the right number of lines in the path text file");
+
+            for (int x = 0; x < pathText.Count / 2; x++)
+            {
+                int nodeX = int.Parse(pathText[x * 2]);
+                int nodeY = int.Parse(pathText[x * 2 + 1]);
+                path.AddNode(nodeX, nodeY);
             }
         }
 
@@ -130,13 +145,45 @@ namespace AlchemyTowerDefense.GameData
                     sw.WriteLine(d.Rect.Y);
                     sw.WriteLine(d.Rotation);
                 }
-                sw.Close();
+
+                //mark the end of the deco data and then save information about the path
+                sw.WriteLine("====");
+                Path.PathNode currentNode = path.startNode;
+                while (currentNode != null)
+                {
+                    sw.WriteLine(currentNode.x);
+                    sw.WriteLine(currentNode.y);
+                    currentNode = currentNode.nextNode;
+                }
             }
         }
 
         #endregion
 
         #region Helper Methods
+
+        private List<string> GetPathTextFromMapText(List<string> mapText)
+        {
+            List<string> pathText = new List<string>();
+
+            int i = 0;
+            while (mapText[i] != "====")
+            {
+                i++;
+            }
+            i++;
+            while (mapText[i] != "====")
+            {
+                i++;
+            }
+            i++;
+            for (int counter = i; counter < mapText.Count; counter++)
+            {
+                pathText.Add(mapText[counter]);
+            }
+            return pathText;
+        }
+
         /// <summary>
         /// Helper method to get the decoration text from the information that the other helper function outputted
         /// </summary>
@@ -153,8 +200,13 @@ namespace AlchemyTowerDefense.GameData
                 i++;
             }
             i++;
+            int j = i;
+            while (mapText[j] != "====")
+            {
+                j++;
+            }
             //for the rest of the text add it to the list which will be returned
-            for (int counter = i; i < mapText.Count; i++)
+            for (int counter = i; i < j; i++)
             {
                 decoText.Add(mapText[i]);
             }
