@@ -17,6 +17,7 @@ namespace AlchemyTowerDefense.Util
         public Dictionary<string, Texture2D> Decos { get; private set; } = new Dictionary<string, Texture2D>();
         public Dictionary<string, Texture2D> Icons { get; private set; } = new Dictionary<string, Texture2D>();
         public Dictionary<string, Texture2D> Toolbox { get; private set; } = new Dictionary<string, Texture2D>();
+        public Dictionary<string, Texture2D> Enemies { get; private set; } = new Dictionary<string, Texture2D>();
 
         /// <summary>
         /// Build the texture dictionaries
@@ -29,6 +30,7 @@ namespace AlchemyTowerDefense.Util
             Decos = LoadTextureContent("decos", c);
             Icons = LoadTextureContent("icons", c);
             Toolbox = LoadTextureContent("toolbox", c);
+            Enemies = LoadTextureContent("enemies", c);
         }
 
         /// <summary>

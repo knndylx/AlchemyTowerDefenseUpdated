@@ -56,3 +56,8 @@ D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.csprojResolveAssemblyReference.cache
 D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.exe
 D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.pdb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\enemies\emeny2.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\enemies\enemy1.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\enemies\enemy3.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\enemies\enemy4.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\enemies\health.xnb

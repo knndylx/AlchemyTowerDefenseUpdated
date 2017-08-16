@@ -121,6 +121,7 @@ namespace AlchemyTowerDefense
         public override void Draw(SpriteBatch spriteBatch)
         {
             Map.Draw(spriteBatch);
+            Map.path.Draw(spriteBatch);
             if(drawState == DrawingState.Tile)
                 spriteBatch.Draw(highlightGridTexture, new Vector2(GlobalConfig.Input.gridx * GlobalConfig.GameDimensions.Size, GlobalConfig.Input.gridy * GlobalConfig.GameDimensions.Size), Color.White);
             else if(drawState == DrawingState.Path)

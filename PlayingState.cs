@@ -14,7 +14,8 @@ namespace AlchemyTowerDefense
     public class PlayingState: GameState
     {
 
-        private Map map = new Map(GlobalConfig.GameDimensions.Size);
+        //private Map map = new Map(GlobalConfig.GameDimensions.Size);
+        private Level myLevel = new Level();
 
         /// <summary>
         /// Initializes the playing state to load the map from the default file
@@ -22,7 +23,12 @@ namespace AlchemyTowerDefense
         /// TODO: make a loading dialog so that the file doesn't have to be default
         public PlayingState()
         {
-            map = new Map(GlobalConfig.GameDimensions.Size,"map.txt");
+            //map = new Map(GlobalConfig.GameDimensions.Size,"Map.txt");
+        }
+
+        public override void Update()
+        {
+            myLevel.Update();
         }
 
         /// <summary>
@@ -31,7 +37,8 @@ namespace AlchemyTowerDefense
         /// <param name="spriteBatch"></param>
         public override void Draw(SpriteBatch spriteBatch)
         {
-            map.Draw(spriteBatch);
+            //map.Draw(spriteBatch);
+            myLevel.Draw(spriteBatch);
         }
     }
 }

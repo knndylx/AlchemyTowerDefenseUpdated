@@ -42,6 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AlchemyGame.cs" />
+    <Compile Include="GameData\HealthBar.cs" />
+    <Compile Include="GameData\Enemy.cs" />
+    <Compile Include="GameData\Level.cs" />
     <Compile Include="GameData\Path.cs" />
     <Compile Include="States\ToolboxState.cs" />
     <Compile Include="GameData\Decoration.cs" />
@@ -84,6 +87,10 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
