@@ -38,10 +38,12 @@
     <File>D:/Github/AlchemyTowerDefense/Content/buttons/load.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/icons/pathnode.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/icons/pathline.png</File>
-    <File>D:/Github/AlchemyTowerDefense/Content/enemies/enemy1.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/enemies/emeny2.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/enemies/enemy3.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/enemies/enemy4.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/enemies/health.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/icons/bullet.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/towers/tower1.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/enemies/enemy1.png</File>
   </SourceFiles>
 </SourceFileCollection>

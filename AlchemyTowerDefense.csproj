@@ -42,10 +42,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AlchemyGame.cs" />
+    <Compile Include="GameData\CollisionHandler.cs" />
     <Compile Include="GameData\HealthBar.cs" />
     <Compile Include="GameData\Enemy.cs" />
     <Compile Include="GameData\Level.cs" />
     <Compile Include="GameData\Path.cs" />
+    <Compile Include="GameData\Projectile.cs" />
+    <Compile Include="GameData\Tower.cs" />
     <Compile Include="States\ToolboxState.cs" />
     <Compile Include="GameData\Decoration.cs" />
     <Compile Include="GlobalConfig.cs" />

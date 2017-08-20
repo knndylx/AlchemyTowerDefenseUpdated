@@ -41,9 +41,11 @@ namespace AlchemyTowerDefense.GameData
                 if (health <= partitions[i])
                 {
                     pixelOffset = barTexture.Height - (rowSpacing * (i + 1));
+                    return pixelOffset;
                 }
             }
-            return pixelOffset;
+            return -1;
+
         }
 
         private void SetRect()

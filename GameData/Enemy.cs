@@ -20,7 +20,10 @@ namespace AlchemyTowerDefense.GameData
 
         private int speed;
         private Direction dir;
-        private Texture2D texture;
+
+        public Texture2D texture;
+        public Color[] textureData;
+
         public Rectangle rect { get; private set; }
         private Vector2 pos;
         private Path path;
@@ -45,6 +48,10 @@ namespace AlchemyTowerDefense.GameData
             speed = 1;
             Health = StartHealth;
             healthBar = new HealthBar(this);
+
+            //load the texture data for collisions
+            textureData = new Color[texture.Width* texture.Height];
+            texture.GetData(textureData);
         }
 
         private void Move()
@@ -133,6 +140,12 @@ namespace AlchemyTowerDefense.GameData
             healthBar.Update();
         }
 
+        public void Collide(Projectile p, int damage)
+        {
+            Health -= damage;
+            Console.WriteLine(Health);
+        }
+
         public bool Finish()
         {
             return currentNode == path.GetLastNode();
@@ -140,7 +153,7 @@ namespace AlchemyTowerDefense.GameData
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, pos, null, Color.White, MathHelper.PiOver2 * (int)dir, new Vector2(texture.Width/2, texture.Height/2), 0.5f, SpriteEffects.None, 1);
+            spriteBatch.Draw(texture, pos, null, Color.White, MathHelper.PiOver2 * (int)dir, new Vector2(texture.Width/2, texture.Height/2), 1f, SpriteEffects.None, 1);
             healthBar.Draw(spriteBatch);
         }
     }

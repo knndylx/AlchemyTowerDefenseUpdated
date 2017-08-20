@@ -11,10 +11,24 @@ namespace AlchemyTowerDefense.GameData
     {
         public Map map = new Map(GlobalConfig.GameDimensions.Size, "Map.txt");
         public List<Enemy> enemies = new List<Enemy>();
+        public List<Tower> towers = new List<Tower>();
+        public CollisionHandler CH = new CollisionHandler();
+        public List<Projectile> projectiles = new List<Projectile>();
+
 
         public Level()
         {
             enemies.Add(new Enemy(map.path));
+            towers.Add(new Tower(5,50, 4, 4));
+            towers.Add(new Tower(5, 70, 4,5));
+            foreach (Tower t in towers)
+            {
+                CH.towers.Add(t);
+            }
+            foreach (Enemy e in enemies)
+            {
+                CH.enemies.Add(e);
+            }
         }
 
         public void Update()
@@ -33,6 +47,26 @@ namespace AlchemyTowerDefense.GameData
                     enemies.Add(new Enemy(map.path));
                 }
             }
+            foreach (Tower t in towers)
+            {
+                UpdateTowerEnemiesInRange(t);
+                t.Update();
+            }
+            CH.Update();
+        }
+
+        public void UpdateTowerEnemiesInRange(Tower t)
+        {
+            t.enemiesInRange.Clear();
+            foreach (Enemy e in enemies)
+            {
+                double distanceToEnemy = Math.Sqrt(Math.Pow((t.rect.Center.X - e.rect.Center.X), 2) +
+                                                  Math.Pow((t.rect.Center.Y - e.rect.Center.Y), 2));
+                if (distanceToEnemy <= t.range)
+                {
+                    t.enemiesInRange.Add(e);
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -41,6 +75,10 @@ namespace AlchemyTowerDefense.GameData
             foreach (Enemy e in enemies)
             {
                 e.Draw(spriteBatch);
+            }
+            foreach (Tower t in towers)
+            {
+                t.Draw(spriteBatch);
             }
         }
     }

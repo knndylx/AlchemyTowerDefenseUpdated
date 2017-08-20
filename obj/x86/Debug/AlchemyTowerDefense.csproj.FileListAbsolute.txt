@@ -61,3 +61,5 @@ D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\enemies\enemy1.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\enemies\enemy3.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\enemies\enemy4.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\enemies\health.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\icons\bullet.xnb
+D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\towers\tower1.xnb
