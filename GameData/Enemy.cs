@@ -144,6 +144,7 @@ namespace AlchemyTowerDefense.GameData
         {
             Health -= damage;
             Console.WriteLine(Health);
+            GlobalConfig.Sounds.Effects["qubodupImpactStone"].Play();
         }
 
         public bool Finish()

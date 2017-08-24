@@ -45,6 +45,7 @@ namespace AlchemyTowerDefense.GameData
                 if (enemies.Count == 0)
                 {
                     enemies.Add(new Enemy(map.path));
+                    CH.enemies.Add(enemies[0]);
                 }
             }
             foreach (Tower t in towers)

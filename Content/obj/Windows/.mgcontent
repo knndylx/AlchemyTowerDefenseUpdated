@@ -45,5 +45,7 @@
     <File>D:/Github/AlchemyTowerDefense/Content/icons/bullet.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/towers/tower1.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/enemies/enemy1.png</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/sounds/qubodupImpactStone.wav</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/sounds/Futuristic Sniper Rifle Single Shot.wav</File>
   </SourceFiles>
 </SourceFileCollection>

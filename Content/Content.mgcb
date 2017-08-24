@@ -505,3 +505,15 @@
 /processorParam:TextureFormat=Color
 /build:enemies/enemy1.png
 
+#begin sounds/qubodupImpactStone.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sounds/qubodupImpactStone.wav
+
+#begin sounds/Futuristic Sniper Rifle Single Shot.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sounds/Futuristic Sniper Rifle Single Shot.wav
+

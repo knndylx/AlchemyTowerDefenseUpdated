@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AlchemyTowerDefense.Util;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -38,6 +39,7 @@ namespace AlchemyTowerDefense.GameData
         public void Fire(Enemy target)
         {
             projectiles.Add(new Projectile(rect.Center.X, rect.Center.Y,target));
+            GlobalConfig.Sounds.Effects["Futuristic Sniper Rifle Single Shot"].Play();
         }
 
         public void Update()

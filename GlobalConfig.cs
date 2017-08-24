@@ -13,6 +13,7 @@ namespace AlchemyTowerDefense
     public static class GlobalConfig
     {
         public static Textures Textures { get; private set; } = new Textures();
+        public static Sounds Sounds { get; private set; } = new Sounds();
         public static Dimensions GameDimensions { get; private set; }
         public static InputProcessor Input { get; private set; } = new InputProcessor();
 
@@ -27,6 +28,7 @@ namespace AlchemyTowerDefense
         public static void InitializeConfig(ContentManager c, int w, int h,int s, List<Keys> keys)
         {
             Textures.Initialize(c);
+            Sounds.Initialize(c);
             GameDimensions = new Dimensions(w,h,s);
             Input.Initialize(keys);
         }
