@@ -54,6 +54,7 @@
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="States\Menus\MainMenuState.cs" />
     <Compile Include="States\Menus\PauseMenuState.cs" />
+    <Compile Include="Util\Animation.cs" />
     <Compile Include="Util\Sounds.cs" />
     <Compile Include="Util\Textures.cs" />
     <Compile Include="Util\Buttons\Button.cs" />

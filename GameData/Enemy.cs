@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AlchemyTowerDefense.Util;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -34,6 +35,8 @@ namespace AlchemyTowerDefense.GameData
         public int StartHealth { get; private set; } = 100;
         public double Health { get; private set; }
         public HealthBar healthBar;
+
+        private List<Animation> hitAnimation = new List<Animation>();
 
         public Enemy(Path p)
         {
@@ -137,13 +140,24 @@ namespace AlchemyTowerDefense.GameData
             Move();
             UpdateNode();
             UpdateDirection();
+            UpdateAnimations();
             healthBar.Update();
+        }
+
+        private void UpdateAnimations()
+        {
+            List<Animation> hitAnimationCopy = new List<Animation>(hitAnimation);
+            foreach (Animation a in hitAnimationCopy)
+            {
+                a.Update();
+                if (!a.active) hitAnimation.Remove(a);
+            }
         }
 
         public void Collide(Projectile p, int damage)
         {
+            hitAnimation.Add(new Animation(GlobalConfig.Textures.Animations["bloodsplat"],(((int)p.pos.X + (int)pos.X) / 2) - 16, (((int)p.pos.Y + (int)pos.Y) / 2) - 16, 32));
             Health -= damage;
-            Console.WriteLine(Health);
             GlobalConfig.Sounds.Effects["qubodupImpactStone"].Play();
         }
 
@@ -154,8 +168,9 @@ namespace AlchemyTowerDefense.GameData
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, pos, null, Color.White, MathHelper.PiOver2 * (int)dir, new Vector2(texture.Width/2, texture.Height/2), 1f, SpriteEffects.None, 1);
+            spriteBatch.Draw(texture, pos, null, Color.White, MathHelper.PiOver2 * (int)dir, new Vector2(texture.Width/2, texture.Height/2), 1f, SpriteEffects.None, 0);
             healthBar.Draw(spriteBatch);
+            foreach(Animation a in hitAnimation) a.Draw(spriteBatch);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AlchemyTowerDefense.Util;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace AlchemyTowerDefense.GameData
@@ -14,6 +15,7 @@ namespace AlchemyTowerDefense.GameData
         public List<Tower> towers = new List<Tower>();
         public CollisionHandler CH = new CollisionHandler();
         public List<Projectile> projectiles = new List<Projectile>();
+        public Animation animateTest;
 
 
         public Level()

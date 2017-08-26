@@ -47,5 +47,6 @@
     <File>D:/Github/AlchemyTowerDefense/Content/enemies/enemy1.png</File>
     <File>D:/Github/AlchemyTowerDefense/Content/sounds/qubodupImpactStone.wav</File>
     <File>D:/Github/AlchemyTowerDefense/Content/sounds/Futuristic Sniper Rifle Single Shot.wav</File>
+    <File>D:/Github/AlchemyTowerDefense/Content/animations/bloodsplat.png</File>
   </SourceFiles>
 </SourceFileCollection>
