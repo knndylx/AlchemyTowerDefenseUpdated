@@ -66,3 +66,4 @@ D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\towers\tower1.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\sounds\Futuristic Sniper Rifle Single Shot.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\sounds\qubodupImpactStone.xnb
 D:\Github\AlchemyTowerDefense\bin\Windows\x86\Debug\Content\animations\bloodsplat.xnb
+D:\Github\AlchemyTowerDefense\obj\x86\Debug\AlchemyTowerDefense.csproj.CoreCompileInputs.cache
